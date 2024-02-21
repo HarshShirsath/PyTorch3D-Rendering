@@ -1,9 +1,5 @@
 # Rendering Basics with PyTorch3D  
 
-
-Goals: In this assignment, you will learn the basics of rendering with PyTorch3D,
-explore 3D representations, and practice constructing simple geometry.
-
 You may find it also helpful to follow the [Pytorch3D tutorials](https://github.com/facebookresearch/pytorch3d).
 
 You are expected to submit
@@ -108,13 +104,11 @@ the following output:
 ![cow_render](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/7e1d105f-8a7a-42a4-b9aa-61026045111a)
 
 
-**On your webpage, include an image of your first mesh.**
-
 ## 1. Practicing with Cameras 
 
 ### 1.1. 360-degree Renders (5 points)
 
-Your task is to create a 360-degree gif video that shows many continuous views of the
+Task is to create a 360-degree gif video that shows many continuous views of the
 provided cow mesh. For many of your results this semester, you will be expected to show
 full turntable views of your outputs. You may find the following helpful:
 * [`pytorch3d.renderer.look_at_view_transform`](https://pytorch3d.readthedocs.io/en/latest/modules/renderer/cameras.html#pytorch3d.renderer.cameras.look_at_view_transform):
@@ -129,8 +123,6 @@ imageio.mimsave('my_gif.gif', my_images, fps=15)
 
 You may find this [website](https://scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/lookat-function/framing-lookat-function.html) helpful to understand look-at transforms.
 
-**On your webpage, you should include a gif that shows the cow mesh from many
-continously changing viewpoints.**
 
 ### 1.2 Re-creating the Dolly Zoom (15 points)
 
@@ -150,7 +142,6 @@ should look something like this:
 You will make modifications to `starter/dolly_zoom.py`. You can render your gif by
 calling `python -m starter.dolly_zoom`.
 
-**On your webpage, include a gif with your dolly zoom effect.**
 
 ## 2. Practicing with Meshes   
 
@@ -169,17 +160,12 @@ vertices and faces, you can define a single-color texture, similarly to the cow 
 It may help to draw a picture of your tetrahedron and label the vertices and assign 3D
 coordinates.
 
-**On your webpage, show a 360-degree gif animation of your tetrahedron.
-Also, list how many vertices and (triangle) faces your mesh should have.**
 
 ### 2.2 Constructing a Cube (5 points)
 
 Construct a cube mesh and then render it from multiple viewpoints. Remember that we are
 still working with triangle meshes, so you will need to use two sets of triangle faces
 to represent one face of the cube.
-
-**On your webpage, show a 360-degree gif animation of your cube.
-Also, list how many vertices and (triangle) faces your mesh should have.**
 
 
 ## 3. Re-texturing a mesh (15 points)
@@ -206,8 +192,6 @@ Your final output should look something like this:
 
 In this case, `color1 = [0, 0, 1]` and `color2 = [1, 0, 0]`.
 
-**In your submission, describe your choice of `color1` and `color2`, and include a gif of the
-rendered mesh.**
 
 ## 4. Camera Transformations (15 points)
 When working with 3D, finding a reasonable camera pose is often the first step to
@@ -229,10 +213,6 @@ each of the following images:
 
 ![transform1](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/f9f56c19-2760-4b8f-8178-ea3675a131b0)
 
-
-
-**In your report, describe in words what R_relative and T_relative should be doing
-and include the rendering produced by your choice of R_relative and T_relative.**
 
 ## 5. Rendering Generic 3D Representations 
 
@@ -303,7 +283,6 @@ Try visualizing each of the point clouds from various camera viewpoints. We sugg
 starting with cameras initialized 6 units from the origin with equally spaced azimuth
 values.
 
-**In your submission, include a gif of each of these point clouds side-by-side.**
 
 ### 5.2 Parametric Functions (10 points)
 
@@ -325,8 +304,6 @@ output with a 100x100 grid of (phi, theta) pairs (`--num_samples 100`) as well a
 Your task is to render a [torus](https://en.wikipedia.org/wiki/Torus) point cloud by
 sampling its parametric function.
 
-**In your writeup, include a 360-degree gif of your torus point cloud, and make sure
-the hole is visible. You may choose to texture your point cloud however you wish.**
 
 ### 5.3 Implicit Surfaces (10 points)
 
@@ -353,10 +330,5 @@ The output should like like this:
 
 Your task is to render a torus again, this time as a mesh defined by an implicit
 function.
-
-**In your writeup, include a 360-degree gif of your torus mesh, and make sure the hole
-is visible. In addition, discuss some of the tradeoffs between rendering as a mesh
-vs a point cloud. Things to consider might include rendering speed, rendering quality,
-ease of use, memory usage, etc.**
 
 
