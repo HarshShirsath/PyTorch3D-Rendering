@@ -2,11 +2,7 @@
 
 You may find it also helpful to follow the [Pytorch3D tutorials](https://github.com/facebookresearch/pytorch3d).
 
-You are expected to submit
-- Writeup: a webpage that shows your results and anaylsis (if applicable).
-- Source code: a zip file of your code. Please include a README file with instructions to reproduce your results.
 
-To create a webpage, we recommend using [MarkDeep](https://casual-effects.com/markdeep/). We have provided a template `report_example/starter.md.html`.
 
 ## 0. Setup
 
