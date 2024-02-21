@@ -74,8 +74,8 @@ Cow render
 
 On your webpage, include an image of your first mesh.
 
-1. Practicing with Cameras
-1.1. 360-degree Renders (5 points)
+####1. Practicing with Cameras
+####1.1. 360-degree Renders (5 points)
 Your task is to create a 360-degree gif video that shows many continuous views of the provided cow mesh. For many of your results this semester, you will be expected to show full turntable views of your outputs. You may find the following helpful:
 
 pytorch3d.renderer.look_at_view_transform: Given a distance, elevation, and azimuth, this function returns the corresponding set of rotations and translations to align the world to view coordinate system.
@@ -90,7 +90,7 @@ On your webpage, you should include a gif that shows the cow mesh from many cont
 
 
 
-1.2 Re-creating the Dolly Zoom (15 points)
+#####1.2 Re-creating the Dolly Zoom (15 points)
 The Dolly Zoom is a famous camera effect, first used in the Alfred Hitchcock film Vertigo. The core idea is to change the focal length of the camera while moving the camera in a way such that the subject is the same size in the frame, producing a rather unsettling effect.
 
 In this task, you will recreate this effect in Pytorch3D, producing an output that should look something like this:
@@ -103,8 +103,8 @@ On your webpage, include a gif with your dolly zoom effect.
 ![dolly](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/6a1d96b6-117d-497d-88a6-bcb5fb5f12ed)
 
 
-2. Practicing with Meshes
-2.1 Constructing a Tetrahedron (5 points)
+#####2. Practicing with Meshes
+#####2.1 Constructing a Tetrahedron (5 points)
 In this part, you will practice working with the geometry of 3D meshes. Construct a tetrahedron mesh and then render it from multiple viewpoints. Your tetrahedron does not need to be a regular tetrahedron (i.e. not all faces need to be equilateral triangles) as long as it is obvious from the renderings that the shape is a tetrahedron.
 
 You will need to manually define the vertices and faces of the mesh. Once you have the vertices and faces, you can define a single-color texture, similarly to the cow in render_mesh.py. Remember that the faces are the vertex indices of the triangle mesh.
@@ -118,7 +118,7 @@ Construct a cube mesh and then render it from multiple viewpoints. Remember that
 
 On your webpage, show a 360-degree gif animation of your cube. Also, list how many vertices and (triangle) faces your mesh should have.
 
-3. Re-texturing a mesh (15 points)
+#####3. Re-texturing a mesh (15 points)
 Now let's practice re-texturing a mesh. For this task, we will be retexturing the cow mesh such that the color smoothly changes from the front of the cow to the back of the cow.
 
 More concretely, you will pick 2 RGB colors, color1 and color2. We will assign the front of the cow a color of color1, and the back of the cow a color of color2. The front of the cow corresponds to the vertex with the smallest z-coordinate z_min, and the back of the cow corresponds to the vertex with the largest z-coordinate z_max. Then, we will assign the color of each vertex using linear interpolation based on the z-value of the vertex:
@@ -135,7 +135,7 @@ In your submission, describe your choice of color1 and color2, and include a gif
 ![cow_retextured_rotation](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/cd3d9c9f-2c09-4ea4-8f67-5f1bc926acda)
 
 
-4. Camera Transformations (15 points)
+####4. Camera Transformations (15 points)
 When working with 3D, finding a reasonable camera pose is often the first step to producing a useful visualization, and an important first step toward debugging.
 
 Running python -m starter.camera_transforms produces the following image using the camera extrinsics rotation R_0 and translation T_0:
@@ -151,7 +151,7 @@ Cow render Cow render Cow render Cow render
 
 In your report, describe in words what R_relative and T_relative should be doing and include the rendering produced by your choice of R_relative and T_relative.
 
-5. Rendering Generic 3D Representations
+####5. Rendering Generic 3D Representations
 The simplest possible 3D representation is simply a collection of 3D points, each possibly associated with a color feature. PyTorch3D provides functionality for rendering point clouds.
 
 Similar to the mesh rendering, we will need a PointCloud object consisting of 3D points and colors, a camera from which to view the point cloud, and a Pytorch3D Point Renderer which we have wrapped similarly to the Mesh Renderer.
@@ -180,7 +180,7 @@ If you run python -m starter.render_generic --render point_cloud, you should get
 
 bridge
 
-5.1 Rendering Point Clouds from RGB-D Images (15 points)
+####5.1 Rendering Point Clouds from RGB-D Images (15 points)
 In this part, we will practice rendering point clouds constructed from 2 RGB-D images from the Common Objects in 3D Dataset.
 
 plant
@@ -200,7 +200,7 @@ In your submission, include a gif of each of these point clouds side-by-side.
 ![plant](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/4f6d5179-c453-401f-9da4-09434a04a7dd)
 
 
-5.2 Parametric Functions (10 points)
+#####5.2 Parametric Functions (10 points)
 A parametric function generates a 3D point for each point in the source domain. For example, given an elevation theta and azimuth phi, we can parameterize the surface of a unit sphere as (sin(theta) * cos(phi), cos(theta), sin(theta) * sin(phi)).
 
 By sampling values of theta and phi, we can generate a sphere point cloud. You can render a sphere point cloud by calling python -m starter.render_generic --render parametric. Note that the amount of samples can have an effect on the appearance quality. Below, we show the output with a 100x100 grid of (phi, theta) pairs (--num_samples 100) as well as a 1000x1000 grid (--num_samples 1000). The latter may take a long time to run on CPU.
@@ -217,7 +217,7 @@ In your writeup, include a 360-degree gif of your torus point cloud, and make su
 
 
 
-5.3 Implicit Surfaces (10 points)
+#####5.3 Implicit Surfaces (10 points)
 In this part, we will explore representing geometry as a function in the form of an implicit function. In general, given a function F(x, y, z), we can define the surface to be the zero level-set of F i.e. (x,y,z) such that F(x, y, z) = 0. The function F can be a mathematical equation or even a neural network. To visualize such a representation, we can discretize the 3D space and evaluate the implicit function, storing the values in a voxel grid. Finally, to recover the mesh, we can run the marching cubes algorithm to extract the 0-level set.
 
 In practice, we can generate our voxel coordinates using torch.meshgrid which we will use to query our function (in this case mathematical ones). Once we have our voxel grid, we can use the mcubes library convert into a mesh.
