@@ -87,6 +87,9 @@ You may find this website helpful to understand look-at transforms.
 
 On your webpage, you should include a gif that shows the cow mesh from many continously changing viewpoints.
 
+
+
+
 1.2 Re-creating the Dolly Zoom (15 points)
 The Dolly Zoom is a famous camera effect, first used in the Alfred Hitchcock film Vertigo. The core idea is to change the focal length of the camera while moving the camera in a way such that the subject is the same size in the frame, producing a rather unsettling effect.
 
@@ -97,6 +100,8 @@ Dolly Zoom
 You will make modifications to starter/dolly_zoom.py. You can render your gif by calling python -m starter.dolly_zoom.
 
 On your webpage, include a gif with your dolly zoom effect.
+![dolly](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/6a1d96b6-117d-497d-88a6-bcb5fb5f12ed)
+
 
 2. Practicing with Meshes
 2.1 Constructing a Tetrahedron (5 points)
@@ -127,6 +132,8 @@ Cow render
 In this case, color1 = [0, 0, 1] and color2 = [1, 0, 0].
 
 In your submission, describe your choice of color1 and color2, and include a gif of the rendered mesh.
+![cow_retextured_rotation](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/cd3d9c9f-2c09-4ea4-8f67-5f1bc926acda)
+
 
 4. Camera Transformations (15 points)
 When working with 3D, finding a reasonable camera pose is often the first step to producing a useful visualization, and an important first step toward debugging.
@@ -138,6 +145,9 @@ Cow render
 What are the relative camera transformations that would produce each of the following output images? You shoud find a set (R_relative, T_relative) such that the new camera extrinsics with R = R_relative @ R_0 and T = R_relative @ T_0 + T_relative produces each of the following images:
 
 Cow render Cow render Cow render Cow render
+![transform_cow](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/98166cb4-4642-4414-a047-9f1cd7f5eaa5)
+![transform1](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/096159a0-4e04-4686-afcf-9711eb055d3e)
+![transform2](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/718bb06a-a8e7-4c85-8081-a3090633df9c)
 
 In your report, describe in words what R_relative and T_relative should be doing and include the rendering produced by your choice of R_relative and T_relative.
 
@@ -187,6 +197,8 @@ The point cloud formed by the union of the first 2 point clouds.
 Try visualizing each of the point clouds from various camera viewpoints. We suggest starting with cameras initialized 6 units from the origin with equally spaced azimuth values.
 
 In your submission, include a gif of each of these point clouds side-by-side.
+![plant](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/4f6d5179-c453-401f-9da4-09434a04a7dd)
+
 
 5.2 Parametric Functions (10 points)
 A parametric function generates a 3D point for each point in the source domain. For example, given an elevation theta and azimuth phi, we can parameterize the surface of a unit sphere as (sin(theta) * cos(phi), cos(theta), sin(theta) * sin(phi)).
@@ -198,6 +210,12 @@ Sphere 100 Sphere 1000
 Your task is to render a torus point cloud by sampling its parametric function.
 
 In your writeup, include a 360-degree gif of your torus point cloud, and make sure the hole is visible. You may choose to texture your point cloud however you wish.
+
+![sphere_500](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/6f5f1a0f-d23b-488b-b6b3-b664fefe1296)
+![sphere_200](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/86f11e2d-ee50-484d-ba77-4c2bc24e6331)
+![sphere_1000](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/35225cdd-185f-433f-ad2a-6337265450ce)
+
+
 
 5.3 Implicit Surfaces (10 points)
 In this part, we will explore representing geometry as a function in the form of an implicit function. In general, given a function F(x, y, z), we can define the surface to be the zero level-set of F i.e. (x,y,z) such that F(x, y, z) = 0. The function F can be a mathematical equation or even a neural network. To visualize such a representation, we can discretize the 3D space and evaluate the implicit function, storing the values in a voxel grid. Finally, to recover the mesh, we can run the marching cubes algorithm to extract the 0-level set.
@@ -211,3 +229,6 @@ Sphere mesh
 Your task is to render a torus again, this time as a mesh defined by an implicit function.
 
 In your writeup, include a 360-degree gif of your torus mesh, and make sure the hole is visible. In addition, discuss some of the tradeoffs between rendering as a mesh vs a point cloud. Things to consider might include rendering speed, rendering quality, ease of use, memory usage, etc.
+![sphere_mesh](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/ce55afe7-4026-4363-8dd5-1399c50841d9)
+
+
