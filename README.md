@@ -105,7 +105,8 @@ a sample cow mesh and renders it. Please take a close look at the code and make 
 you understand how it works. If you run `python -m starter.render_mesh`, you should see
 the following output:
 
-![Cow render](images/cow_render.jpg)  
+![cow_render](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/7e1d105f-8a7a-42a4-b9aa-61026045111a)
+
 
 **On your webpage, include an image of your first mesh.**
 
@@ -143,7 +144,8 @@ effect.
 In this task, you will recreate this effect in Pytorch3D, producing an output that
 should look something like this:
 
-![Dolly Zoom](images/dolly.gif)
+![dolly](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/d746b751-5800-499e-af98-101156407ee5)
+
 
 You will make modifications to `starter/dolly_zoom.py`. You can render your gif by
 calling `python -m starter.dolly_zoom`.
@@ -198,8 +200,9 @@ color = alpha * color2 + (1 - alpha) * color1
 ```
 
 Your final output should look something like this:
+![cow_retextured](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/3071071c-8ac9-4cd1-856f-7c5916e31eef)
 
-![Cow render](images/cow_retextured.jpg)
+
 
 In this case, `color1 = [0, 0, 1]` and `color2 = [1, 0, 0]`.
 
@@ -213,7 +216,8 @@ producing a useful visualization, and an important first step toward debugging.
 Running `python -m starter.camera_transforms` produces the following image using
 the camera extrinsics rotation `R_0` and translation `T_0`:
 
-![Cow render](images/transform_none.jpg)
+![transform_none](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/40fac21d-f666-4761-9a1f-d244fb79de32)
+
 
 
 What are the relative camera transformations that would produce each of the following
@@ -221,11 +225,11 @@ output images? You shoud find a set (R_relative, T_relative) such that the new c
 extrinsics with `R = R_relative @ R_0` and `T = R_relative @ T_0 + T_relative` produces
 each of the following images:
 
+![transform2](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/3474a971-0567-4e22-8f53-f035ca4d08d3)
 
-![Cow render](images/transform1.jpg)
-![Cow render](images/transform3.jpg)
-![Cow render](images/transform4.jpg)
-![Cow render](images/transform2.jpg)
+![transform1](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/f9f56c19-2760-4b8f-8178-ea3675a131b0)
+
+
 
 **In your report, describe in words what R_relative and T_relative should be doing
 and include the rendering produced by your choice of R_relative and T_relative.**
@@ -269,7 +273,6 @@ If you run `python -m starter.render_generic --render point_cloud`, you should
 get the following output:
 
 
-![bridge](images/bridge.jpg)
 
 
 ### 5.1 Rendering Point Clouds from RGB-D Images (15 points)
@@ -277,7 +280,8 @@ get the following output:
 In this part, we will practice rendering point clouds constructed from 2 RGB-D images
 from the [Common Objects in 3D Dataset](https://github.com/facebookresearch/co3d).
 
-![plant](images/plant.jpg)
+![plant](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/622dbdca-29e5-4f24-ac4c-ed7242d84651)
+
 
 In `render_generic.py`, the `load_rgbd_data` function will load the data for 2 images of the same
 plant. The dictionary should contain the RGB image, a depth map, a mask, and a
@@ -314,8 +318,9 @@ Note that the amount of samples can have an effect on the appearance quality. Be
 output with a 100x100 grid of (phi, theta) pairs (`--num_samples 100`) as well as a 
 1000x1000 grid (`--num_samples 1000`). The latter may take a long time to run on CPU.
 
-![Sphere 100](images/sphere_100.jpg)
-![Sphere 1000](images/sphere_1000.jpg)
+![sphere_100](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/bd7f350f-5779-40cc-970d-3516830b66b4)
+![sphere_500](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/0350b34f-eb08-4977-8d9e-0aa76f7d8bac)
+
 
 Your task is to render a [torus](https://en.wikipedia.org/wiki/Torus) point cloud by
 sampling its parametric function.
@@ -344,7 +349,7 @@ A sample sphere mesh can be constructed implicitly and rendered by calling
 `python -m starter.render_generic --render implicit`.
 The output should like like this:
 
-![Sphere mesh](images/sphere_mesh.jpg)
+![sphere_mesh](https://github.com/HarshShirsath/PyTorch3D-Rendering/assets/113379668/54ac7731-0fa4-4725-8138-bedd36adf060)
 
 Your task is to render a torus again, this time as a mesh defined by an implicit
 function.
